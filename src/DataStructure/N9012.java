@@ -14,7 +14,7 @@ public class N9012 {
             String inputs[] = input.split("");
             Stack<String> stack = new Stack<String>();
 
-            if (inputs.length % 2 != 0 || inputs[0] == ")") {
+            if (inputs.length % 2 != 0 || inputs[0].equals(")")) {
                 System.out.println("NO");
                 continue;
             } else {
@@ -38,5 +38,6 @@ public class N9012 {
                 else System.out.println("NO");
             }
         }
+        scanner.close();
     }
 }
