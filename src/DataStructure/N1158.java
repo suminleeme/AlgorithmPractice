@@ -14,6 +14,7 @@ public class N1158 {
         }
         boolean flag = true;
         System.out.print("<");
+
         while (flag == true) {
             flag = cl.deleteAndPrintNode(m);
         }
