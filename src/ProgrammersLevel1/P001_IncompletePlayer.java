@@ -9,13 +9,10 @@ package ProgrammersLevel1;
         출처 : 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
         */
 
-/*
-* 정확성: 50.0 효율성: 50.0 합계: 100.0 / 100.0
-* */
 
 import java.util.HashMap;
 
-class Solution {
+class Solution_IncompletePlayer {
     public String solution(String[] participant, String[] completion) {
         String answer = "";
         HashMap<String, Integer> map = new HashMap<String, Integer>();
@@ -48,7 +45,7 @@ public class P001_IncompletePlayer {
         String[] participant = {"leo", "kiki", "eden"};
         String[] completion = {"eden", "kiki"};
 
-        Solution solution = new Solution();
+        Solution_IncompletePlayer solution = new Solution_IncompletePlayer();
         String answer = solution.solution(participant, completion);
 
         System.out.println("answer : " + answer);

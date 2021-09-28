@@ -13,15 +13,21 @@ package ProgrammersLevel2;
         출처 : 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
         */
 
-/* 효율성 테스트 케이스 3개 실패
-* 정확성: 83.3 효율성: 0.0 합계: 83.3 / 100.0
-*/
-
 import java.util.Arrays;
 
-class Solution {
+class Solution_PhoneNumberList {
     public boolean Solution(String[] phone_book) {
         boolean answer = true;
+
+        Arrays.sort(phone_book);
+        for (int i = 0; i < phone_book.length - 1; i++) {
+            if (phone_book[i+1].startsWith(phone_book[i])) {
+                answer = false;
+                break;
+            }
+        }
+
+        /* 효울성 테스트 실패
         Arrays.sort(phone_book);
 
         for (int i = 0; i < phone_book.length - 1; i++) {
@@ -31,7 +37,23 @@ class Solution {
                     break;
                 }
             }
+        }*/
+
+        /* 효울성 테스트 실패
+        for (int i = 0; i < phone_book.length - 1; i++) {
+            for (int j = i + 1; j < phone_book.length; j++) {
+                if (phone_book[j].startsWith(phone_book[i])) {
+                    answer = false;
+                    break;
+                }
+
+                if (phone_book[i].startsWith(phone_book[j])) {
+                    answer = false;
+                    break;
+                }
+            }
         }
+        */
 
         return answer;
     }
@@ -43,7 +65,7 @@ public class P002_PhoneNumberList {
         String[] phone_book2 = {"123","456","789"};
         String[] phone_book3 = {"12","123","1235","567","88"};
 
-        Solution solution = new Solution();
+        Solution_PhoneNumberList solution = new Solution_PhoneNumberList();
         boolean answer1 = solution.Solution(phone_book1);
         boolean answer2 = solution.Solution(phone_book2);
         boolean answer3 = solution.Solution(phone_book3);
